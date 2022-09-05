@@ -6,10 +6,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   $curso = $_REQUEST["curso"];
   $hashsenha = md5($_REQUEST["senha"]);
   $sql =<<<EOF
-     INSERT INTO public.curso (nomme, email ,curso ,hashsenha)
+     INSERT INTO public.curso (nome, email ,curso ,hashsenha)
      VALUES ('$nome', '$email', '$curso',  '$hashsenha' );
 EOF;
-echo isset($db);
   $ret = pg_query($db, $sql);
   if(!$ret) {
      http_response_code(501);
