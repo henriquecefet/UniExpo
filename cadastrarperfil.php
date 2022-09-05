@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   $hashsenha = md5($_REQUEST["senha"]);
   $sql =<<<EOF
      INSERT INTO public.perfil (nome, email ,curso_idcurso ,hashsenha)
-     VALUES ('$nome', '$email', '$curso',  '$hashsenha' );
+     VALUES ('$nome', '$email', $curso,  '$hashsenha' );
 EOF;
   $ret = pg_query($db, $sql);
   if(!$ret) {
