@@ -4,7 +4,7 @@ header("Content-type: text/html; charset=utf-8");
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type");
 //CadastrarPerfil
-if ($_SERVER["REQUEST_METHOD"] == "POST" $_REQUEST["funcao"] == "CadastrarPerfil")){
+if ($_SERVER["REQUEST_METHOD"] == "POST" && $_REQUEST["funcao"] == "CadastrarPerfil")){
   $nomme= $_REQUEST["nome"];
   $email = $_REQUEST["email"];
   $curso = $_REQUEST["curso"];
@@ -12,14 +12,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" $_REQUEST["funcao"] == "CadastrarPerfil
   CadastrarPerfil($nome, $email, $curso, $hashsenha);
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" $_REQUEST["funcao"] == "CadastrarProjeto")){
+if ($_SERVER["REQUEST_METHOD"] == "POST" && $_REQUEST["funcao"] == "CadastrarProjeto")){
   $nomme = $_REQUEST["nome"];
   $descricao = $_REQUEST["descricao"];
   $orientador = $_REQUEST["orientador"];
   CadastrarProjeto($nome, $email, $curso, $hashsenha);
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" $_REQUEST["funcao"] == "CadastrarProjetoPerfil")){
+if ($_SERVER["REQUEST_METHOD"] == "POST" && $_REQUEST["funcao"] == "CadastrarProjetoPerfil")){
   $projeto = $_REQUEST["projeto "];
   $perfil = $_REQUEST["perfil"];
   CadastrarProjetoPerfil($projeto, $perfil);
