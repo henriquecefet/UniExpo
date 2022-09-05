@@ -1,0 +1,235 @@
+body{
+    margin:0;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+h2{
+    font-family: 'Noto Serif', serif;
+}
+
+button{
+    width: 15vh;
+    height: 7vh;
+    background-color: #4B39B5;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    transition: 1s ease;
+    cursor: pointer;
+}
+
+button:hover{
+    transform: scale(1.2);
+    transition: 1s ease;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.h1perfil{
+    color:black;
+}
+
+.caixaDeTexto{
+    width: 70vh;
+}
+
+.flex-between{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.flexAround{
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+}
+
+.corpo{
+    padding: 50vh;
+    background-image: url("/imagens/imagemDeFundo.jpg");
+    background-size: cover;
+    color: white;
+}
+
+.corpoCursos{
+    background-image: url("/imagens/imagemDeCursos.jpeg");
+    background-size: cover;
+    padding: 35vh;
+}
+
+.corpoCadastro{
+    background-image: url("/imagens/imagemDeCadastro.png");
+    background-size: cover;
+    padding: 30vh;
+}
+
+.corpoCadastro h2{
+    color: white;
+}
+
+.corpoCadastro p{
+    color: white;
+}
+
+.caixa{
+    backdrop-filter: blur(2px);
+    z-index: 2;
+    width: 60vh;
+    border-radius: 20px;
+}
+
+.caixa p{
+    z-index: 1;
+}
+
+.caixa:before{
+    content: '';
+    filter: blur(6px);
+    z-index: 1;
+}
+
+.cartao{
+    background-color: white;
+    width: 40vh;
+}
+
+.cabeçalho{
+    position:absolute;
+    top: 40vh;
+    left: 80vh;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-around;
+}
+
+.line{
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.linepreto{
+    width: 35px;
+    height: 5px;
+    background-color: #000;
+    margin: 6px 0;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.menu{
+    position: absolute;
+    top: 1vh;
+    right: 2vh;
+}
+
+.barralateral{
+    position: fixed;
+    padding: 5vh 0 100vh 0;
+    width: 50vh;
+    background-color: #4B39B5;
+}
+
+.barralateral h2{
+    display: flex;
+    justify-content: center;
+}
+
+.barralateral p{
+    display: flex;
+    justify-content: center;
+}
+
+.barralateral img{
+    margin: 8vh;
+    width: 200px;
+    border-radius: 120px;
+}
+
+.sidenav {
+    cursor: pointer;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+    cursor: pointer;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.cartoes{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+}
+
+.cartao{
+    background-color: white;
+    height:40vh;
+    width: 30vh;
+    text-align: center;
+    border-radius:16px;
+    transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.cartao img{
+    height: 30vh;
+    width: 30vh;
+    border-radius: 16px;
+}
+
+.cartao:hover{
+    transform: scale(1.2);
+    transition: 1s ease;
+    border-radius:16px;
+    overflow:hidden;
+
+}
+
+.barraPesquisa{
+    position: absolute;
+    top:10vh;
+    left: 90vh;
+}
+
+ .material-symbols-outlined {
+     font-variation-settings:
+             'FILL' 0,
+             'wght' 400,
+             'GRAD' 0,
+             'opsz' 48
+ }
