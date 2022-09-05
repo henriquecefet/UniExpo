@@ -5,7 +5,7 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type");
 //CadastrarPerfil
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $_REQUEST["funcao"] == "CadastrarPerfil")){
-  $nomme= $_REQUEST["nome"];
+  $nome= $_REQUEST["nome"];
   $email = $_REQUEST["email"];
   $curso = $_REQUEST["curso"];
   $hashsenha = md5($_REQUEST["senha"]);
