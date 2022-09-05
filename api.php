@@ -1,8 +1,17 @@
 <?php
-include("conexao.php");
 header("Content-type: text/html; charset=utf-8");
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type");
+$host        = "host = ec2-34-233-115-14.compute-1.amazonaws.com";
+$port        = "port = 5432";
+$dbname      = "dbname = dbausclhsrca45";
+$credentials = "user = xmgknnbnrrfsip password=8d4babda99903940e95e1df59f23f9adead22c1ec99585f19a771e85711a5f68";
+$db = pg_connect( "$host $port $dbname $credentials"  );
+	if(!$db) {
+	      echo "Error : Unable to open database\n";
+	 } else {
+	     echo "Opened database successfully\n";
+	}
 //CadastrarPerfil
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $_REQUEST["funcao"] == "CadastrarPerfil")){
   $nome= $_REQUEST["nome"];
@@ -30,7 +39,7 @@ function CadastrarPerfil($nome, $email, $curso, $hashsenha){
         INSERT INTO public.curso (nomme, email ,curso ,hashsenha)
         VALUES ('$nome', '$email', '$curso',  '$hashsenha' );
 EOF;
-     $ret = pg_query($GLOBALS['db'], $sql);
+     $ret = pg_query($db, $sql);
      if(!$ret) {
         http_response_code(501);
      } else {
