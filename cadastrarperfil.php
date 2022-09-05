@@ -9,7 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
      INSERT INTO public.curso (nomme, email ,curso ,hashsenha)
      VALUES ('$nome', '$email', '$curso',  '$hashsenha' );
 EOF;
-  $ret = pg_query($_SESSION['db'], $sql);
+echo isset($db);
+  $ret = pg_query($db, $sql);
   if(!$ret) {
      http_response_code(501);
   } else {
