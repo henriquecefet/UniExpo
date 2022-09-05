@@ -30,7 +30,7 @@ function CadastrarPerfil($nome, $email, $curso, $hashsenha){
         INSERT INTO public.curso (nomme, email ,curso ,hashsenha)
         VALUES ('$nome', '$email', '$curso',  '$hashsenha' );
 EOF;
-     $ret = pg_query($db, $sql);
+     $ret = pg_query($GLOBALS['db'], $sql);
      if(!$ret) {
         http_response_code(501);
      } else {
