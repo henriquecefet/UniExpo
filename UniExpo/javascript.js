@@ -17,3 +17,22 @@ function redirecionarCadastro(){
 function redirecionarCursos(){
     location.href="cursos.html";
 }
+
+function lerDados(){
+  		  var settings = {
+              "url": "https://projetouniexpo.herokuapp.com/recuperaPerfil.php?email=",
+               "method": "GET",
+               "timeout": 0,
+               "processData": false,
+               "mimeType": "multipart/form-data",
+               "contentType": false,
+
+          };
+  		    $.ajax(settings).done(function (response) {
+                console.log(response);
+                var jx = JSON.parse(response);
+                for (let i = 0; i < jx.perfis.length; i++) {
+                    let nome = document.getElementById('nome').innerHTML(jx.perfis[i].nome);
+                }
+            })
+}
