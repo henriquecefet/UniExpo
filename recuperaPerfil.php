@@ -1,7 +1,7 @@
 <?php
 include("conexao.php");
 if ($_SERVER["REQUEST_METHOD"] == "GET"){
-  $email = $_REQUEST["email"];
+  $email = $_GET["email"];
 
   $sql =<<<EOF
      select * from perfil where email = '$email';
