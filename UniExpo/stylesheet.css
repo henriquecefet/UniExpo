@@ -3,6 +3,10 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+select{
+    position: relative;
+    left: 16vh;
+}
 
 h2{
     font-family: 'Noto Serif', serif;
