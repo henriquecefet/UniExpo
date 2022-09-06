@@ -54,19 +54,19 @@ a{
 
 .corpo{
     padding: 50vh;
-    background-image: url("https://uniexpo.herokuapp.com/UniExpo/imagens/imagemDeFundo.jpg");
+    background-image: url("https://projetouniexpo.herokuapp.com/UniExpo/imagens/imagemDeFundo.jpg");
     background-size: cover;
     color: white;
 }
 
 .corpoCursos{
-    background-image: url("https://uniexpo.herokuapp.com/UniExpo/imagens/imagemDeCursos.jpeg");
+    background-image: url("https://projetouniexpo.herokuapp.com/UniExpo/imagens/imagemDeCursos.jpeg");
     background-size: cover;
     padding: 35vh;
 }
 
 .corpoCadastro{
-    background-image: url("https://uniexpo.herokuapp.com/UniExpo/imagens/imagemDeCadastro.png");
+    background-image: url("https://projetouniexpo.herokuapp.com/UniExpo/imagens/imagemDeCadastro.png");
     background-size: cover;
     padding: 30vh;
 }
