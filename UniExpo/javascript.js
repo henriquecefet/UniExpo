@@ -18,7 +18,7 @@ function redirecionarCursos(){
     location.href="cursos.html";
 }
 
-function lerDados(){
+function lerPerfil(){
   		  var settings = {
               "url": "https://projetouniexpo.herokuapp.com/recuperaPerfil.php?email=",
                "method": "GET",
