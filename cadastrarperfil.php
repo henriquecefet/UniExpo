@@ -14,6 +14,7 @@ EOF;
      http_response_code(501);
   } else {
      http_response_code(200);
+      header("Location: https://projetouniexpo.herokuapp.com/UniExpo/perfil.html");
   }
 }
 
