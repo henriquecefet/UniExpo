@@ -5,9 +5,9 @@ $dbname      = "dbname = d4a98bg3enk2n2";
 $credentials = "user = ekpyivbnwyisml password=52b262b77718ccdef3b6a0b90181bd5669a8c9f03b01fc03a720e25e1ab42b53";
 $db = pg_connect( "$host $port $dbname $credentials"  );
 	if(!$db) {
-	      echo "Error : Unable to open database\n";
+	      //echo "Error : Unable to open database\n";
 	 } else {
-	     echo "Opened database successfully\n";
+	    // echo "Opened database successfully\n";
 	}
 
 ?>
