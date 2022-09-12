@@ -18,15 +18,27 @@ function redirecionarCursos(){
     location.href="cursos.html";
 }
 
-function GetInfo() {
 
-    fetch('https://projetouniexpo.herokuapp.com/login.php?email=calopsita.chapeu%40gmail.com&senha=senha123')
-        .then(response => response.json())
-        .then(data => {
 
-            document.getElementById('nome').innerHTML="nome";
+//https://projetouniexpo.herokuapp.com/login.php?email=calopsita.chapeu%40gmail.com&senha=senha123
+function PegarInfo() {
 
-        })
+    var settings = {
+        "url": "https://projetouniexpo.herokuapp.com/login.php?",
+        "method": "GET",
+        "timeout": 0,
+        "processData": false,
+        "mimeType": "multipart/form-data",
+        "contentType": false,
+    };
 
-        .catch(err => alert("Something Went Wrong: Try Checking Your Internet Coneciton"))
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+        var jx = JSON.parse(response);
+        console.log(jx.perfis[0].nome);
+        document.getElementById("nome").innerHTML = jx.perfis[0].nome;
+
+
+    })
+
 }
