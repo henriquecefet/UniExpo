@@ -19,7 +19,7 @@ function redirecionarCursos(){
 }
 
 function pegarInfo(){
-
+    localStorage.setItem("email",document.getElementById("email").value);
     let email = localStorage.getItem("email");
     var settings = {
         "url": "https://projetouniexpo.herokuapp.com/recuperaPerfil.php?email=" + email,
@@ -39,12 +39,6 @@ function pegarInfo(){
 
     })
 
-}
-
-function setarInfo(){
-    console.log("entrei no setarInfo");
-    localStorage.setItem("email",document.getElementById("email").value);
-    console.log(document.getElementById("email").value);
 }
 
 
