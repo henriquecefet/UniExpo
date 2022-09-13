@@ -25,6 +25,7 @@ EOF;
     }
     if($podeir){
       echo json_encode($response);
+      header('Location: UniExpo/perfil.html');
     }
     else{
       header('Location: UniExpo/login.html');
