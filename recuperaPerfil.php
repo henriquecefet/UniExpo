@@ -15,8 +15,8 @@ EOF;
     while($row = pg_fetch_row($ret)) {
       $perfil = array();
       $perfil["id"] = $row[0];
-      $perfil["nome"] = $row[2];
-      $perfil["email"] = $row[1];
+      $perfil["nome"] = $row[1];
+      $perfil["email"] = $row[2];
       $perfil["curso"] = $row[3];
       array_push($response["perfis"], $perfil);
     }
