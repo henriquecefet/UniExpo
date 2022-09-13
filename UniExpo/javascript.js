@@ -1,5 +1,24 @@
+function abrirMenu() {
+    document.getElementById("navbar").style.width = "250px";
+}
 
-function PegarInfo() {
+function fecharMenu() {
+    document.getElementById("navbar").style.width = "0";
+}
+
+function redirecionarLogin(){
+    location.href="login.html";
+}
+
+function redirecionarCadastro(){
+    location.href="cadastro.html";
+}
+
+function redirecionarCursos(){
+    location.href="cursos.html";
+}
+
+function pegarInfo(){
 
     let email = localStorage.getItem("email");
     var settings = {
@@ -22,29 +41,10 @@ function PegarInfo() {
 
 }
 
-function abrirMenu() {
-    document.getElementById("navbar").style.width = "250px";
-}
-
-function fecharMenu() {
-    document.getElementById("navbar").style.width = "0";
-}
-
-function redirecionarLogin(){
-    location.href="login.html";
-}
-
-function redirecionarCadastro(){
-    location.href="cadastro.html";
-}
-
-function redirecionarCursos(){
-    location.href="cursos.html";
-}
-
 function setarInfo(){
     console.log("entrei no setarInfo");
     localStorage.setItem("email",document.getElementById("email").value);
     console.log(document.getElementById("email").value);
 }
+
 
