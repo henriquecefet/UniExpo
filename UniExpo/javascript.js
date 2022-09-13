@@ -18,13 +18,19 @@ function redirecionarCursos(){
     location.href="cursos.html";
 }
 
+function setarInfo(){
+    localStorage.setItem("email",document.getElementById("email").value);
+    console.log(document.getElementById("email").value)
+}
 
 
-//https://projetouniexpo.herokuapp.com/login.php?email=calopsita.chapeu%40gmail.com&senha=senha123
 function PegarInfo() {
 
+    let email = localStorage.getItem("email");
+
+
     var settings = {
-        "url": "https://projetouniexpo.herokuapp.com/login.php?",
+        "url": "https://projetouniexpo.herokuapp.com/recuperaPerfil.php?email=" + email,
         "method": "GET",
         "timeout": 0,
         "processData": false,
