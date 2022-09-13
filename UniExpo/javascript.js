@@ -18,17 +18,9 @@ function redirecionarCursos(){
     location.href="cursos.html";
 }
 
-function setarInfo(){
-    localStorage.setItem("email",document.getElementById("email").value);
-    console.log(document.getElementById("email").value)
-}
-
-
 function PegarInfo() {
 
     let email = localStorage.getItem("email");
-
-
     var settings = {
         "url": "https://projetouniexpo.herokuapp.com/recuperaPerfil.php?email=" + email,
         "method": "GET",
@@ -48,3 +40,10 @@ function PegarInfo() {
     })
 
 }
+
+function setarInfo(){
+    console.log("entrei no setarInfo");
+    localStorage.setItem("email",document.getElementById("email").value);
+    console.log(document.getElementById("email").value);
+}
+
