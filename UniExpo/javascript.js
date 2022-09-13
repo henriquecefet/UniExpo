@@ -1,9 +1,9 @@
-function setarInfo(){
+var setarInfo = function(){
     console.log("entrei no setarInfo");
     localStorage.setItem("email",document.getElementById("email").value);
     console.log(document.getElementById("email").value);
 }
-function pegarInfo(){
+var pegarInfo =  function(){
     localStorage.getItem("email");
     let email = localStorage.getItem("email");
     var settings = {
