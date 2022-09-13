@@ -8,7 +8,7 @@ var pegarInfo =  function(){
     let email = localStorage.getItem("email");
     console.log(email);
     var settings = {
-        "url": "https://projetouniexpo.herokuapp.com/recuperaPerfil.php?email=baby@gmail.com",
+        "url": "https://projetouniexpo.herokuapp.com/recuperaPerfil.php?email=" + email,
         "method": "GET",
         "timeout": 0,
         "processData": false,
