@@ -25,7 +25,8 @@ EOF;
     }
     if($podeir){
       echo json_encode($response);
-      header('Location: UniExpo/perfil.html');
+      echo '<script src="pacote.js"> setarInfo() </script>'
+      header('Location: perfil.html');
     }
     else{
       header('Location: UniExpo/login.html');
