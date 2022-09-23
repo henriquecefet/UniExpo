@@ -37,7 +37,7 @@
                 console.log(jx.perfis[0].nome);
                 document.getElementById("nome").innerHTML = jx.perfis[0].nome;
                 document.getElementById("curso").innerHTML = jx.perfis[0].curso;
-
+                document.getElementById("sobre").innerHTML = jx.perfis[0].sobre;
 
             });
 
@@ -61,6 +61,10 @@
 
         function redirecionarCursos(){
             location.href="cursos.html";
+        }
+
+        function editarSobre(){
+
         }
     </script>
 </head>
@@ -93,9 +97,8 @@
 </div>
 
 <div class="flexAround">
-    <div class="caixaDeTexto">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque, libero eu pharetra iaculis, sem ex hendrerit magna, eget interdum justo nisi sit amet lorem. Nulla facilisi. Pellentesque a metus et est tempor convallis ac sit amet mi. In sit amet fringilla tellus. Etiam id massa enim. Sed euismod commodo risus sit amet ullamcorper. Nam aliquet varius magna, mattis auctor magna eleifend a. Integer tortor mi, venenatis in cursus malesuada, posuere at leo. Vestibulum maximus hendrerit dolor, eu rhoncus est porta eget. Nullam faucibus ex odio, quis tincidunt orci porta in. Sed libero mauris, tincidunt sagittis est sed, bibendum vulputate nisl. Sed velit nibh, volutpat id dictum ut, dictum lacinia nunc. Aenean ipsum quam, hendrerit a imperdiet a, placerat et metus. </p>
-    </div>
+    <div class="caixaDeTexto" id="sobre">
+         </div>
 
    </div>
 <br>
