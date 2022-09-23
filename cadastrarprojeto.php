@@ -19,7 +19,7 @@ EOF;
     $idprojeto = $row[0];
   }
 
-  $sq3 =<<<EOF
+  $sql3 =<<<EOF
      INSERT INTO public.perfil_projeto (perfil_idperfil,projeto_idprojeto)
      VALUES ($idPerfil, $idprojeto, '$nomeOrientador' );
 EOF;
