@@ -37,7 +37,10 @@
                 console.log(jx.perfis[0].nome);
                 document.getElementById("nome").innerHTML = jx.perfis[0].nome;
                 document.getElementById("curso").innerHTML = jx.perfis[0].curso;
-                document.getElementById("sobre").innerHTML = jx.perfis[0].sobre;
+                if (jx.perfis[0].sobre != null){
+                    document.getElementById("sobre").innerHTML = jx.perfis[0].sobre;
+                }
+               
 
             });
 
