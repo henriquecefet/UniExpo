@@ -2,9 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>UniExpo</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="package.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
+<script>
+    var setarInfo = function(){
+        console.log("entrei no setarInfo");
+        localStorage.setItem("email",document.getElementById("email").value);
+        console.log(document.getElementById("email").value);
+    }
+    var pegarInfo =  function(){
+        localStorage.getItem("email");
+        let email = localStorage.getItem("email");
+        console.log(email);
+        var settings = {
+            "url": "https://projetouniexpo.herokuapp.com/recuperaPerfil.php?email=" + email,
+            "method": "GET",
+            "timeout": 0,
+            "processData": false,
+            "mimeType": "multipart/form-data",
+            "contentType": false,
+        };
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+            var jx = JSON.parse(response);
+            console.log(jx.perfis[0].nome);
+            document.getElementById("nome").innerHTML = jx.perfis[0].nome;
+            document.getElementById("curso").innerHTML = jx.perfis[0].curso;
+
+
+        });
+
+    }
+
+    function abrirMenu() {
+        document.getElementById("navbar").style.width = "250px";
+    }
+
+    function fecharMenu() {
+        document.getElementById("navbar").style.width = "0";
+    }
+
+    function redirecionarLogin(){
+        location.href="login.html";
+    }
+
+    function redirecionarCadastro(){
+        location.href="cadastro.html";
+    }
+
+    function redirecionarCursos(){
+        location.href="cursos.html";
+    }
+</script>
+
+<div class="menu" onclick="abrirMenu()"><div class="linepreto"></div>
+    <div class="linepreto"></div>
+    <div class="linepreto"></div>
+</div>
+
+<div id="navbar" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="fecharMenu()">&times;</a>
+    <a href="cursos.html">Cursos</a>
+    <a href="projeto.html">Projetos</a>
+    <a href="#">C</a>
+    <a href="#">D</a>
+</div>
+
+<div class="flexAround">
+    <h1>Seus projetos</h1>
+    <div id="projetos"></div>
+</div>
+<div class="flexAround">
+    <button>Criar projeto</button>
+</div>
 
 </body>
 </html>
