@@ -17,6 +17,7 @@ EOF;
   $ret2 = pg_query($db, $sql2);
   while($row = pg_fetch_row($ret2)) {
     $idprojeto = $row[0];
+    break;
   }
 
   $sql3 =<<<EOF
