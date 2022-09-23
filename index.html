@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <title>UniExpo</title>
     <link rel="stylesheet" href="stylesheet.css">
-    <script src="package.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script src="package.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
@@ -15,7 +14,12 @@
 </head>
 <body>
 <script>
-    var pegarID =  function(){
+    var setarInfo = function(){
+        console.log("entrei no setarInfo");
+        localStorage.setItem("email",document.getElementById("email").value);
+        console.log(document.getElementById("email").value);
+    }
+    var pegarInfo =  function(){
         localStorage.getItem("email");
         let email = localStorage.getItem("email");
         console.log(email);
@@ -31,9 +35,11 @@
         $.ajax(settings).done(function (response) {
             console.log(response);
             var jx = JSON.parse(response);
-            var id = jx.perfis[0].id;
+            console.log(jx.perfis[0].nome);
+            document.getElementById("nome").innerHTML = jx.perfis[0].nome;
+            document.getElementById("curso").innerHTML = jx.perfis[0].curso;
 
-            document.getElementById("idAluno").innerHTML = id;
+
         });
 
     }
@@ -57,32 +63,37 @@
     function redirecionarCursos(){
         location.href="cursos.html";
     }
-
-    function redirecionarProjeto(){
-        location.href="criacaoProjeto.html";
-    }
 </script>
-    <div class="flex">
-        <div class="caixa">
-            <div class="flex"><h2>Cadastre seu projeto</h2></div>
-
-            <form action="https://projetouniexpo.herokuapp.com/cadastrarprojeto.php">
-                <div onload="pegarID()"></div>
-                <p id="idAluno">A</p>
-                <div class="flex"><label for="nome"><p><b>Nome do projeto</b></p></label></div>
-                <div class="flex"><input type="text" placeholder="Digite o nome do projeto" name="nome" id="nome" required></div>
-                <div class="flex"><label for="nomeOrientador"><p><b>Nome do orientador do projeto</b></p></label></div>
-                <div class="flex"><input type="text" placeholder="Digite o nome do orientador" name="nomeOrientador" id="nomeOrientador" required></div>
-                <br>
-                <div class="flexAround"><label><b>Descrição</b></label><br></div>
-                <br>
-                <div class="flex"><textarea placeholder="Digite a descrição aqui..." type="text" name="descricaoProjeto"></textarea></div>
-                <br>
-                <div class="flex"><button type="submit" class="" id="" onclick="">Adicionar</button></div>
-            </form>
+<div class="corpo">
+    <div class="cabeçalho">
+        <div class="flex">
+            <h2>Divulgando projetos e ideias</h2>
+        </div>
+        <div class="flex">
+            <h1>UniExpo</h1>
+        </div>
+        <div class="flex">
+            <button onclick="redirecionarLogin()"> Entrar</a></button>
+            <button onclick="redirecionarCadastro()">Cadastrar</a></button>
         </div>
     </div>
 
+</div>
+
+
+
+<div class="menu" onclick="abrirMenu()"><div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+</div>
+
+<div id="navbar" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="fecharMenu()">&times;</a>
+    <a href="cursos.html">Cursos</a>
+    <a href="projeto.html">Projetos</a>
+    <a href="#">C</a>
+    <a href="#">D</a>
+</div>
 
 </body>
 </html>
