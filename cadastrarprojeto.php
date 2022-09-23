@@ -12,7 +12,7 @@ EOF;
   $ret = pg_query($db, $sql);
 
 $sql2 =<<<EOF
-     SELECT idprojeto FROM public.projeto where nome = $nome;
+     SELECT idprojeto FROM public.projeto where nome = '$nome';
 EOF;
   $ret2 = pg_query($db, $sql2);
   while($row = pg_fetch_row($ret2)) {
@@ -21,7 +21,7 @@ EOF;
 
   $sql3 =<<<EOF
      INSERT INTO public.perfil_projeto (perfil_idperfil,projeto_idprojeto)
-     VALUES ($idPerfil, $idprojeto, '$nomeOrientador' );
+     VALUES ($idPerfil, $idprojeto);
 EOF;
   $ret3 = pg_query($db, $sql3);
 
