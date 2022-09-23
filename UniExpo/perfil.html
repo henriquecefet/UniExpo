@@ -63,7 +63,15 @@
             location.href="cursos.html";
         }
 
+        var cliques = 0;
         function editarSobre(){
+            if (cliques % 2 == 0){
+                cliques++;
+                document.getElementById("sobre").contentEditable = "true";
+            } else {
+                cliques++;
+                document.getElementById("sobre").contentEditable = "false";
+            }
 
         }
     </script>
@@ -79,7 +87,7 @@
     <a href="javascript:void(0)" class="closebtn" onclick="fecharMenu()">&times;</a>
     <a href="cursos.html">Cursos</a>
     <a href="projeto.html">Projetos</a>
-    <a href="#">C</a>
+    <a href="perfil.html">Perfil</a>
     <a href="#">D</a>
 </div>
 
@@ -97,13 +105,14 @@
 </div>
 
 <div class="flexAround">
-    <div class="caixaDeTexto" id="sobre">
+    <div class="caixaDeTexto">
+        <p contenteditable="false" id = "sobre">Informações sobre você</p>
          </div>
 
    </div>
 <br>
 <div class="flexAround">
-    <button>Editar</button>
+    <button onclick="editarSobre()">Editar</button>
 </div>
 
 
