@@ -1,6 +1,6 @@
 <?php
 include("conexao.php");
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
+if($_SERVER["REQUEST_METHOD"] == "POST"){
   $sobre = $_REQUEST["sobre"];
   $idPerfil = $_REQUEST["idperfil"];
   $sql =<<<EOF
