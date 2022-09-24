@@ -39,10 +39,49 @@
             console.log(jx.perfis[0].nome);
             document.getElementById("nome").innerHTML = jx.perfis[0].nome;
             document.getElementById("curso").innerHTML = jx.perfis[0].curso;
-
-
         });
 
+    }
+
+    var pegarID =  function(){
+        localStorage.getItem("email");
+        let email = localStorage.getItem("email");
+        console.log(email);
+        var settings = {
+            "url": "https://projetouniexpo.herokuapp.com/recuperaPerfil.php?email=" + email,
+            "method": "GET",
+            "timeout": 0,
+            "processData": false,
+            "mimeType": "multipart/form-data",
+            "contentType": false,
+        };
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+            var jx = JSON.parse(response);
+            var id = jx.perfis[0].id;
+            document.getElementById("idAluno").value = id;
+            localStorage.setItem("id", id);
+        });
+    }
+
+    var pegarProjetos = function(){
+     let id = localStorage.getItem("id");
+
+     var mudarNome = {
+         "url": "https://projetouniexpo.herokuapp.com/recupearprojetoperfil.php",
+         "method":"GET",
+         "timeout": 0,
+         "processData": false,
+         "mimeType": "multipart/form-data",
+         "contentType": false,
+     };
+
+     $.ajax(mudarNome).done(function (response){
+         console.log(response);
+         var amigo = JSON.parse(response);
+
+     });
     }
 
     function abrirMenu() {
