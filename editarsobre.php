@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   $sobre = $_REQUEST["sobre"];
   $idPerfil = $_REQUEST["idperfil"];
   $sql =<<<EOF
-     UPDATE public.perfil set soobre = '$sobre' where idperfil = $idPerfil
+     UPDATE public.perfil set sobre = '$sobre' where idperfil = $idPerfil;
 EOF;
   $ret = pg_query($db, $sql);
   if(!$ret) {
