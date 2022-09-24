@@ -37,6 +37,7 @@
                 var jx = JSON.parse(response);
                 console.log(jx.perfis[0].nome);
                 var id = jx.perfis[0].id;
+                document.getElementById("idAluno").value = id;
                 document.getElementById("nome").innerHTML = jx.perfis[0].nome;
                 document.getElementById("curso").innerHTML = jx.perfis[0].curso;
                 if (jx.perfis[0].sobre != null){
@@ -119,6 +120,7 @@
                 <textarea name="sobre">
 
             </textarea>
+                <input name="id" id="idAluno" style="display: none">
             </div>
             <div class="flexAround"><button onclick="editarSobre()" type="submit">Editar</button></div>
 
