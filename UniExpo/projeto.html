@@ -12,9 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-</head>
-<body>
-<script>
+    <script>
     var setarInfo = function(){
         console.log("entrei no setarInfo");
         localStorage.setItem("email",document.getElementById("email").value);
@@ -66,22 +64,22 @@
     }
 
     var pegarProjetos = function(){
-     let id = localStorage.getItem("id");
+        let id = localStorage.getItem("id");
 
-     var mudarNome = {
-         "url": "https://projetouniexpo.herokuapp.com/recuperarprojetoperfil.php?id="+id,
-         "method":"GET",
-         "timeout": 0,
-         "processData": false,
-         "mimeType": "multipart/form-data",
-         "contentType": false,
-     };
+        var recuperarprojeto = {
+            "url": "https://projetouniexpo.herokuapp.com/recuperarprojetoperfil.php",
+            "method":"GET",
+            "timeout": 0,
+            "processData": false,
+            "mimeType": "multipart/form-data",
+            "contentType": false,
+        };
 
-     $.ajax(mudarNome).done(function (response){
-         console.log(response);
-         var amigo = JSON.parse(response);
-
-     });
+        $.ajax(recuperarprojeto).done(function (response){
+            console.log(response);
+            var amigo = JSON.parse(response);
+            console.log(amigo)
+        });
     }
 
     function abrirMenu() {
@@ -108,6 +106,10 @@
         location.href="criacaoProjeto.html";
     }
 </script>
+
+</head>
+<body onload="pegarProjetos()">
+
 
 <div class="menu" onclick="abrirMenu()"><div class="linepreto"></div>
     <div class="linepreto"></div>
