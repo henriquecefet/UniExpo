@@ -63,6 +63,17 @@
 </script>
 </head>
 <body onload="pegarID()">
+<div class="menu" onclick="abrirMenu()"><div class="linepreto"></div>
+    <div class="linepreto"></div>
+    <div class="linepreto"></div>
+</div>
+<div id="navbar" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="fecharMenu()">&times;</a>
+    <a href="cursos.html">Cursos</a>
+    <a href="projeto.html">Projetos</a>
+    <a href="perfil.html">Perfil</a>
+    <a href="#">D</a>
+</div>
 
     <div class="flex">
         <div class="caixa">
@@ -70,7 +81,7 @@
 
             <form action="https://projetouniexpo.herokuapp.com/cadastrarprojeto.php" method="post">
 
-                <div class="flex"><input type="text" id="idAluno" name="idperfil"></div>
+                <div class="flex"><input type="text" id="idAluno" name="idperfil" style="display: none"></div>
                 <div class="flex"><label for="nome"><p><b>Nome do projeto</b></p></label></div>
                 <div class="flex"><input type="text" placeholder="Digite o nome do projeto" name="nome" id="nome" required></div>
                 <div class="flex"><label for="nomeOrientador"><p><b>Nome do orientador do projeto</b></p></label></div>
