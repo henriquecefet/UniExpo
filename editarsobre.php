@@ -1,10 +1,10 @@
 <?php
 include("conexao.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-  $sobre= $_REQUEST["sobre"];
+  $sobre = $_REQUEST["sobre"];
+  $idPerfil = $_REQUEST["idperfil"];
   $sql =<<<EOF
-     INSERT INTO public.perfil (sobre)
-     VALUES ('$sobre');
+     UPDATE public.perfil set soobre = '$sobre' where idperfil = $idPerfil
 EOF;
   $ret = pg_query($db, $sql);
   if(!$ret) {
