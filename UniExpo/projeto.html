@@ -83,7 +83,9 @@
             console.log(amigo);
             console.log(amigo.projetos[0].nome);
             document.getElementById("projetos").innerHTML = amigo.projetos[0].nome;
+            document.getElementById("qtdprojetos").innerHTML = "Você tem " + amigo.projetos.length + "projetos";
             console.log(amigo.projetos.length);
+            console.log("Você tem " + amigo.projetos.length + "projetos");
         });
     }
 
@@ -134,8 +136,16 @@
 
 <div class="flexAround">
     <h1>Seus projetos</h1>
-    <div id="projetos"></div>
 </div>
+    
+<div class="flexAround">
+    <p id="projetos">Seu primeiro projeto</p>
+</div>
+<div class="flexAround">
+    <p id="qtdprojetos">Quantidade de projetos</p>
+</div>
+   
+    
 <div class="flexAround">
     <button onclick="redirecionarProjeto()">Criar projeto</button>
 </div>
