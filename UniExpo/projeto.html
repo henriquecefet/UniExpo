@@ -58,13 +58,14 @@
             //console.log(response);
             var jx = JSON.parse(response);
             var id = jx.perfis[0].id;
-            console.log(id);
+            console.log("id no pegarid: " + id);
             localStorage.setItem("id", id);
         });
     }
 
     var pegarProjetos = function(){
         pegarID();
+        console.log("entrei no PegarProjetos");
         let id = localStorage.getItem("id");
         console.log(id);
         var recuperarprojeto = {
