@@ -19,6 +19,7 @@
             console.log(document.getElementById("email").value);
         }
         var pegarInfo =  function(){
+            console.log("entrei");
             localStorage.getItem("email");
             let email = localStorage.getItem("email");
             console.log(email);
@@ -75,6 +76,7 @@
                 document.getElementById("sobre").style.color = "blue";
             } else {
                 cliques++;
+                document.getElementById("formulario").style.display = "none";
                 document.getElementById("botao").style.display="flex";
                 document.getElementById("sobre").style.color = "black";
             }
@@ -114,10 +116,13 @@
     <div class="caixaDeTexto">
         <p contenteditable="false" id = "sobre">Informações sobre você!</p>
         <form action="https://projetouniexpo.herokuapp.com/editarsobre.php" method="post" id="formulario">
-            <textarea name="sobre">
+            <div class="flexAround">
+                <textarea name="sobre">
 
             </textarea>
-            <button onclick="editarSobre()" type="submit">Editar</button>
+            </div>
+            <div class="flexAround"><button onclick="editarSobre()" type="submit">Editar</button></div>
+
         </form>
          </div>
 
