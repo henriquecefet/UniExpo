@@ -55,19 +55,20 @@
         };
 
         $.ajax(settings).done(function (response) {
-            console.log(response);
-            var jx = JSON.parse(response);
+            //console.log(response);
+           // var jx = JSON.parse(response);
             var id = jx.perfis[0].id;
-            document.getElementById("idAluno").value = id;
+            console.log(id);
             localStorage.setItem("id", id);
         });
     }
 
     var pegarProjetos = function(){
+        pegarID();
         let id = localStorage.getItem("id");
-
+        console.log(id);
         var recuperarprojeto = {
-            "url": "https://projetouniexpo.herokuapp.com/recuperarprojetoperfil.php",
+            "url": "https://projetouniexpo.herokuapp.com/recuperarprojetoperfil.php?id=" + id,
             "method":"GET",
             "timeout": 0,
             "processData": false,
