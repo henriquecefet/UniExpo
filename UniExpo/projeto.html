@@ -80,7 +80,8 @@
         $.ajax(recuperarprojeto).done(function (response){
             console.log(response);
             var amigo = JSON.parse(response);
-            console.log(amigo)
+            console.log(amigo);
+            console.log(amigo.projetos[0].nome);
         });
     }
 
