@@ -40,7 +40,7 @@
                 if (jx.perfis[0].sobre != null){
                     document.getElementById("sobre").innerHTML = jx.perfis[0].sobre;
                 }
-               
+
 
             });
 
@@ -70,10 +70,13 @@
         function editarSobre(){
             if (cliques % 2 == 0){
                 cliques++;
-                document.getElementById("sobre").contentEditable = "true";
+                document.getElementById("formulario").style.display = "block";
+                document.getElementById("botao").style.display="none";
+                document.getElementById("sobre").style.color = "blue";
             } else {
                 cliques++;
-                document.getElementById("sobre").contentEditable = "false";
+                document.getElementById("botao").style.display="flex";
+                document.getElementById("sobre").style.color = "black";
             }
 
         }
@@ -110,12 +113,18 @@
 <div class="flexAround">
     <div class="caixaDeTexto">
         <p contenteditable="false" id = "sobre">Informações sobre você</p>
+        <form action="https://projetouniexpo.herokuapp.com/editarsobre.php" method="post" id="formulario">
+            <textarea name="sobre">
+
+            </textarea>
+            <button onclick="editarSobre()" type="submit">Editar</button>
+        </form>
          </div>
 
    </div>
 <br>
 <div class="flexAround">
-    <button onclick="editarSobre()">Editar</button>
+    <button onclick="editarSobre()" id="botao">Editar</button>
 </div>
 
 
