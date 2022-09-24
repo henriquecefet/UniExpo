@@ -2,7 +2,7 @@
 include("conexao.php");
 if($_SERVER["REQUEST_METHOD"] == "POST"){
   $sobre = $_REQUEST["sobre"];
-  $idPerfil = $_REQUEST["idperfil"];
+  $idPerfil = $_REQUEST["id"];
   $sql =<<<EOF
      UPDATE public.perfil set sobre = '$sobre' where idperfil = $idPerfil;
 EOF;
