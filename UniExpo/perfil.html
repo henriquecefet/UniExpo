@@ -36,6 +36,7 @@
                 console.log(response);
                 var jx = JSON.parse(response);
                 console.log(jx.perfis[0].nome);
+                var id = jx.perfis[0].id;
                 document.getElementById("nome").innerHTML = jx.perfis[0].nome;
                 document.getElementById("curso").innerHTML = jx.perfis[0].curso;
                 if (jx.perfis[0].sobre != null){
