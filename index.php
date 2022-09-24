@@ -1,4 +1,4 @@
 <?php
-header("Location: UniExpo/index.html"); 
+header("Location: index.html"); 
 exit()
 ?>
