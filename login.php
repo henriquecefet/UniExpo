@@ -26,10 +26,10 @@ EOF;
     if($podeir){
       echo json_encode($response);
       //echo '<script src="pacote.js"> setarInfo() </script>';
-      header('Location: https://uniexpo.netlify.app/perfil.html');
+      header('Location: perfil.html');
     }
     else{
-      header('Location: https://uniexpo.netlify.app/login.html');
+      header('Location: login.html');
     }
 
   }
