@@ -1,4 +1,4 @@
 <?php
-header("Location: index.html"); 
+header("Location: https://projetouniexpo.herokuapp.com/UniExpo/index.html");
 exit()
 ?>
