@@ -52,13 +52,6 @@ a{
     text-align: justify;
 }
 
-.telaprojetos{
-    padding: 10vh;
-    background-image: url("https://projetouniexpo.herokuapp.com/UniExpo/imagens/imagemDeFundo.jpg");
-    background-size: cover;
-    color: black;
- }
-
 .corpo{
     padding: 50vh;
     background-image: url("https://projetouniexpo.herokuapp.com/UniExpo/imagens/imagemDeFundo.jpg");
@@ -245,11 +238,26 @@ a{
              'opsz' 48
  }
 
+ .telaprojetos{
+     background-image: url("https://projetouniexpo.herokuapp.com/UniExpo/imagens/imagemDeFundo.jpg");
+     background-size: cover;
+     color: black;
+ }
+
  .telaprojetos h1{
      color:white;
  }
 
+ #outrosprojetos{
+     display: flex;
+     justify-content: space-around;
+     flex-direction: row;
+ }
 
+ .flexlinha{
+     display: flex;
+     justify-content: space-around;
+ }
 
  #formulario{
      display:none;
