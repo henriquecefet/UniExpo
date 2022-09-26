@@ -238,6 +238,17 @@ a{
              'opsz' 48
  }
 
+ .telaprojetos{
+     background-image: url("https://projetouniexpo.herokuapp.com/UniExpo/imagens/imagemDeFundo.jpg");
+     background-size: cover;
+ }
+
+ .telaprojetos h1{
+     color:white;
+ }
+
+
+
  #formulario{
      display:none;
  }
