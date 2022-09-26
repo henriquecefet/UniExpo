@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>UniExpo</title>
     <link rel="stylesheet" href="stylesheet.css">
-     <script src="package.js"></script>
+    <script src="package.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
@@ -12,6 +12,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<script>
+    var cliqueBSI = function(){
+        localStorage.setItem("id", "2");
+        location.href("projetosBSI.html");
+    }
+
+    var cliqueMatematica = function(){
+        localStorage.setItem("id", "1");
+        location.href("projetosMatematica.html");
+    }
+
+    var cliqueEngProd = function(){
+        localStorage.setItem("id", "3");
+        location.href("projetosEngProd.html");
+    }
+</script>
 </head>
 <body>
 
@@ -39,15 +55,15 @@
 
     <div class="cartoes">
         <div class="cartao">
-            <img src="https://uniexpo.herokuapp.com/UniExpo/imagens/bsi.png">
+            <img src="https://uniexpo.herokuapp.com/UniExpo/imagens/bsi.png" onclick="cliqueBSI()">
             <p>Bacharelado em Sistemas de Informação</p>
         </div>
         <div class="cartao">
-            <img src="https://uniexpo.herokuapp.com/UniExpo/imagens/matematica.png">
+            <img src="https://uniexpo.herokuapp.com/UniExpo/imagens/matematica.png" onclick="cliqueMatematica()">
             <p>Licenciatura em Matemática</p>
         </div>
         <div class="cartao">
-            <img src="https://uniexpo.herokuapp.com/UniExpo/imagens/engdeproducao.jpg">
+            <img src="https://uniexpo.herokuapp.com/UniExpo/imagens/engdeproducao.jpg" onclick="cliqueEngProd()">
             <p>Bacharelado em Engenharia de Produção</p>
         </div>
 
