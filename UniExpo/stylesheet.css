@@ -71,6 +71,12 @@ a{
     padding: 30vh;
 }
 
+.corpoCriacaoProjeto{
+    background-image: url("https://projetouniexpo.herokuapp.com/UniExpo/imagens/imagemDeCadastro.png");
+    padding-bottom: 50vh;
+    background-size: cover;
+}
+
 .corpoCadastro h2{
     color: white;
 }
