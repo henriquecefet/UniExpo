@@ -2,9 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <title>UniExpo</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="package.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script>
+        var pegarProjeto = function (){
+            let idCurso = localStorage.getItem("id");
+            var settings = {
+                "url": "https://projetouniexpo.herokuapp.com/recuperarprojetocurso.php?curso=" + idCurso,
+                "method": "GET",
+                "timeout": 0,
+                "processData": false,
+                "mimeType": "multipart/form-data",
+                "contentType": false,
+            };
 
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+                var jx = JSON.parse(response);
+
+            });
+        }
+    </script>
+</head>
+<body onload="pegarProjeto()">
+<p>KKLLLLLLLLLLLLLLLLLLLLLL</p>
 </body>
 </html>
