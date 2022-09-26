@@ -88,16 +88,15 @@
                 document.getElementById("qtdprojetos").innerHTML = "Você tem " + amigo.projetos.length + " projeto";
             } else {
                 document.getElementById("qtdprojetos").innerHTML = "Você tem " + amigo.projetos.length + " projetos";
-                criaCartoes(quantidade, amigo);
+                criaCartoes(quantidade);
             }
         });
     }
-    var criaCartoes = function (quantidade, amigo) {
+    var criaCartoes = function (quantidade) {
         const linha = document.querySelector('#outrosprojetos');
         for (let i = 0; i < quantidade; i++){
             const cartao = document.createElement('div');
             cartao.classList.add('cartao');
-            console.log(amigo.projetos[i].nome);
             linha.append(cartao);
         }
     }
