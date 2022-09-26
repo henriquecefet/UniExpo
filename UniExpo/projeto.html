@@ -88,15 +88,20 @@
                 document.getElementById("qtdprojetos").innerHTML = "Você tem " + amigo.projetos.length + " projeto";
             } else {
                 document.getElementById("qtdprojetos").innerHTML = "Você tem " + amigo.projetos.length + " projetos";
-                criaCartoes(quantidade);
+                criaCartoes(quantidade, amigo);
             }
         });
     }
-    var criaCartoes = function (quantidade) {
+    var criaCartoes = function (quantidade, amigo) {
         const linha = document.querySelector('#outrosprojetos');
         for (let i = 0; i < quantidade; i++){
             const cartao = document.createElement('div');
+            const espaco = document.createElement('br');
             cartao.classList.add('cartao');
+            cartao.innerHTML = "Nome: " + amigo.projetos[i].nome;
+            cartao.append(espaco);
+            cartao.append("Orientador: " +amigo.projetos[i].orientador);
+            console.log(amigo.projetos[i].nome);
             linha.append(cartao);
         }
     }
@@ -148,7 +153,7 @@
 </div>
 
 <div class="flexAround">
-    <h1>Seus projetos</h1>
+    <h1>Informações</h1>
 </div>
 
 
@@ -162,18 +167,17 @@
     <p id="qtdprojetos">Aqui a quantidade de projetos</p>
 </div>
 </div>
-
-    
-    <p>Seus outros projetos</p>
-    
-<div class="flex-between">
-    <div id = "outrosprojetos">
-        
-    </div>
+<br>
+<div class="flexlinha">
+    <h1>Outros projetos</h1>
 </div>
+<br>
+<br>
+    <div id="outrosprojetos">
+    </div>
+<br>
 
-
-<div class="flexAround">
+<div class="flexlinha">
     <button onclick="redirecionarProjeto()">Criar projeto</button>
 </div>
 
