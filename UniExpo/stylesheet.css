@@ -239,8 +239,10 @@ a{
  }
 
  .telaprojetos{
-     background-image: url("https://projetouniexpo.herokuapp.com/UniExpo/imagens/imagemDeFundo.jpg");
-     background-size: cover;
+    padding: 10vh;
+    background-image: url("https://projetouniexpo.herokuapp.com/UniExpo/imagens/imagemDeFundo.jpg");
+    background-size: cover;
+    color: black;
  }
 
  .telaprojetos h1{
