@@ -85,6 +85,15 @@ a{
     color: white;
 }
 
+.corpoProjetos{
+    background-image: url("/imagens/tecnologia.gif");
+    padding-top: 10vh;
+    padding-bottom: 80vh;
+    background-size: cover;
+    color: white;
+
+}
+
 .caixa{
     backdrop-filter: blur(2px);
     z-index: 2;
@@ -131,6 +140,15 @@ a{
     width: 35px;
     height: 5px;
     background-color: #000;
+    margin: 6px 0;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.linebranco{
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
     margin: 6px 0;
     border-radius: 2px;
     cursor: pointer;
@@ -214,6 +232,9 @@ a{
     text-align: center;
     border-radius:16px;
     transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    color:black;
+    display: flex;
+    flex-direction: column;
 }
 
 .cartao img{

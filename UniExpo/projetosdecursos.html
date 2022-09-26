@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UniExpo</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="package.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script>
+        var pegarProjeto = function (){
+            let idCurso = localStorage.getItem("id");
+            var settings = {
+                "url": "https://projetouniexpo.herokuapp.com/recuperarprojetocurso.php?curso=" + idCurso,
+                "method": "GET",
+                "timeout": 0,
+                "processData": false,
+                "mimeType": "multipart/form-data",
+                "contentType": false,
+            };
+
+            $.ajax(settings).done(function (response) {
+                var jx = JSON.parse(response);
+
+                if (idCurso === "1"){
+                    document.getElementById("mudavel").innerHTML="Matemática";
+
+                    //Matemática
+                } else if (idCurso == "2"){
+                    document.getElementById("mudavel").innerHTML="Sistemas de Informação";
+                    //SI
+                } else if (idCurso == "3"){
+                    document.getElementById("mudavel").innerHTML="Engenharia de Produção";
+                    //Eng Prod
+                }
+
+                criaCartoes(jx);
+            });
+        }
+
+        var criaCartoes = function(jx){
+            const linha = document.querySelector('#projetos');
+            const quantidade = jx.projetos.length;
+            for (let i = 0; i < quantidade; i++) {
+                const cartao = document.createElement('div');
+                const espaco = document.createElement('br');
+                cartao.classList.add('cartao');
+                linha.append(cartao);
+                console.log(jx.projetos[i].nome);
+                cartao.append(jx.projetos[i].nome);
+                cartao.append(espaco);
+                cartao.append("\n Orientador: ");
+                cartao.append(jx.projetos[i].orientador);
+            }
+        }
+    </script>
+</head>
+
+<body onload="pegarProjeto()">
+<div class="menu" onclick="abrirMenu()"><div class="linebranco"></div>
+    <div class="linebranco"></div>
+    <div class="linebranco"></div>
+</div>
+<div class="menu" onclick="abrirMenu()"><div class="linebranco"></div>
+    <div class="linebranco"></div>
+    <div class="linebranco"></div>
+</div>
+<div id="navbar" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="fecharMenu()">&times;</a>
+    <a href="cursos.html">Cursos</a>
+    <a href="projeto.html">Projetos</a>
+    <a href="perfil.html">Perfil</a>
+    <a href="#">D</a>
+</div>
+<div class="corpoProjetos">
+    <div class="flex"><h1 id ="mudavel">Curso</h1></div>
+
+
+    <div id="projetos" style="display: flex;justify-content: space-evenly"></div>
+
+
+
+</div>
+
+</body>
+</html>
