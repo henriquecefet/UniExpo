@@ -69,20 +69,13 @@ a{
     background-image: url("https://uniexpo.herokuapp.com/UniExpo/imagens/imagemDeCadastro.png");
     background-size: cover;
     padding: 30vh;
+    color: white;
 }
 
 .corpoCriacaoProjeto{
     background-image: url("https://uniexpo.herokuapp.com/UniExpo/imagens/imagemDeCadastro.png");
     padding-bottom: 50vh;
     background-size: cover;
-}
-
-.corpoCadastro h2{
-    color: white;
-}
-
-.corpoCadastro p{
-    color: white;
 }
 
 .corpoProjetos{
