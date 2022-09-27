@@ -52,15 +52,17 @@
                     console.log(jx.projetos[i].link);
                     const cartao = document.createElement('div');
                     const espaco = document.createElement('br');
+                    const endereco = document.createElement('a');
                     cartao.classList.add('cartao');
                     linha.append(cartao);
-              
+               
                     cartao.append(jx.projetos[i].nome);
                     cartao.append(espaco);
-                    cartao.append("\n Orientador: ");
-                    cartao.append(jx.projetos[i].orientador);
-                    cartao.onclick(location.replace = jx.projetos[i].link);
-
+                   /* cartao.append("\n Orientador: ");
+                    cartao.append(jx.projetos[i].orientador); */
+                    cartao.append("Endereço: ");
+                    cartao.append(endereco);
+                    cartao.append(jx.projetos[i].link);
                 }
             }
 
