@@ -5,6 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   $descricaoProjeto = $_REQUEST["descricaoProjeto"];
   $nomeOrientador = $_REQUEST["nomeOrientador"];
   $idPerfil = $_REQUEST["idperfil"];
+  $endereco = $_REQUEST["endereco"];
   $sql =<<<EOF
      INSERT INTO public.projeto (nome, descricao ,orientador)
      VALUES ('$nome', '$descricaoProjeto', '$nomeOrientador' );
@@ -25,6 +26,12 @@ EOF;
      VALUES ($idPerfil, $idprojeto);
 EOF;
   $ret3 = pg_query($db, $sql3);
+
+  $sql4 =<<<EOF
+     INSERT INTO public.link (projeto_idprojeto, endereco)
+     VALUES ($idprojeto, '$endereco');
+EOF;
+  $ret4 = pg_query($db, $sql4);
 
   if(!$ret) {
      http_response_code(501);
