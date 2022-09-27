@@ -26,10 +26,10 @@ EOF;
     if($podeir){
       echo json_encode($response);
       //echo '<script src="pacote.js"> setarInfo() </script>';
-      header('Location: https://projetouniexpo.herokuapp.com/UniExpo/perfil.html');
+      header('Location: https://uniexpo.herokuapp.com/UniExpo/perfil.html');
     }
     else{
-      header('Location: https://projetouniexpo.herokuapp.com/UniExpo/login.html');
+      header('Location: https://uniexpo.herokuapp.com/UniExpo/login.html');
     }
 
   }

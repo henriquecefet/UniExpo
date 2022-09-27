@@ -46,7 +46,7 @@
         let email = localStorage.getItem("email");
         console.log(email);
         var settings = {
-            "url": "https://projetouniexpo.herokuapp.com/recuperaPerfil.php?email=" + email,
+            "url": "https://uniexpo.herokuapp.com/recuperaPerfil.php?email=" + email,
             "method": "GET",
             "timeout": 0,
             "processData": false,
@@ -105,7 +105,7 @@
             linha.append(cartao);
         }
     }
-    
+
 
     function abrirMenu() {
         document.getElementById("navbar").style.width = "250px";
