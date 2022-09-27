@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
   select projeto.*, endereco from public.link
   join public.projeto on (link.projeto_idprojeto = idprojeto )
   join perfil_projeto on (perfil_projeto.projeto_idprojeto = idprojeto)
-  join perfil on (perfil_idperfil = idperfil and idperfil = $idperfil));
+  join perfil on (perfil_idperfil = idperfil and idperfil = $idperfil);
 EOF;
   $ret = pg_query($db, $sql);
   if(!$ret) {
