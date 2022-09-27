@@ -39,7 +39,15 @@
                 var id = jx.perfis[0].id;
                 document.getElementById("idAluno").value = id;
                 document.getElementById("nome").innerHTML = jx.perfis[0].nome;
-                document.getElementById("curso").innerHTML = jx.perfis[0].curso;
+                var idCurso = jx.perfis[0].curso;
+                if (idCurso == 1){
+                    document.getElementById("curso").innerHTML = "Matemática";
+                } else if (idCurso == 2){
+                document.getElementById("curso").innerHTML = "Sistemas de Informação";
+                }
+                else if (idCurso == 3){
+                document.getElementById("curso").innerHTML = "Engenharia de Produção";
+                }
                 if (jx.perfis[0].sobre != null){
                     document.getElementById("sobre").innerHTML = jx.perfis[0].sobre;
                 }
@@ -114,7 +122,7 @@
 
 <div class="flexAround">
     <div class="caixaDeTexto">
-        <p contenteditable="false" id = "sobre">Informações sobre você!</p>
+        <p contenteditable="false" id = "sobre">Informações sobre você</p>
         <form action="https://uniexpo.herokuapp.com/editarsobre.php" method="post" id="formulario">
             <div class="flexAround">
                 <textarea name="sobre">
