@@ -50,8 +50,7 @@
                 for (let i = 0; i < quantidade; i++) {
                     const cartao = document.createElement('div');
                     const espaco = document.createElement('br');
-                    const link = document.createElement('p');
-                    link.onclick(location.href = jx.projetos[i].link);
+                    console.log(jx.projetos[i].endereco);
                     cartao.classList.add('cartao');
                     linha.append(cartao);
                     console.log(jx.projetos[i].nome);
@@ -59,7 +58,7 @@
                     cartao.append(espaco);
                     cartao.append("\n Orientador: ");
                     cartao.append(jx.projetos[i].orientador);
-                    cartao.append(link);
+
                 }
             }
 
