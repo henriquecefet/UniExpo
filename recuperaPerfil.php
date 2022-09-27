@@ -18,7 +18,7 @@ EOF;
       $perfil["nome"] = $row[1];
       $perfil["email"] = $row[2];
       $perfil["sobre"] = $row[5];
-      $perfil["curso"] = $row[7];
+      $perfil["curso"] = $row[3];
       array_push($response["perfis"], $perfil);
     }
     echo json_encode($response);
