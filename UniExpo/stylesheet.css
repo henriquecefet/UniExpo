@@ -60,7 +60,7 @@ a{
 }
 
 .corpoCursos{
-    background-image: url("https://ouniexpo.herokuapp.com/UniExpo/imagens/imagemDeCursos.jpeg");
+    background-image: url("https://uniexpo.herokuapp.com/UniExpo/imagens/imagemDeCursos.jpeg");
     background-size: cover;
     padding: 35vh;
 }
@@ -86,7 +86,7 @@ a{
 }
 
 .corpoProjetos{
-    background-image: url("/imagens/tecnologia.gif");
+    background-image: url("https://uniexpo.herokuapp.com/UniExpo/imagens/tecnologia.gif");
     padding-top: 10vh;
     padding-bottom: 80vh;
     background-size: cover;
