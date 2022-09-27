@@ -27,7 +27,7 @@
 
             $.ajax(settings).done(function (response) {
                 var jx = JSON.parse(response);
-
+                console.log(jx);
                 if (idCurso === "1"){
                     document.getElementById("mudavel").innerHTML="Matemática";
                     //Matemática
@@ -45,28 +45,24 @@
 
         var criaCartoes = function(jx){
             const linha = document.querySelector('#projetos');
-     
+
             const quantidade = jx.projetos.length;
             if (quantidade < 50){
                 for (let i = 0; i < quantidade; i++) {
-                    console.log(jx.projetos[i].link);
-                    const cartao = document.createElement('div');
+                    var endereco = document.createTextNode("\n");
+                    const cartao = document.createElement('a');
                     const espaco = document.createElement('br');
-                    const endereco = document.createElement('a');
                     cartao.classList.add('cartao');
-                    linha.append(cartao);
-               
                     cartao.append(jx.projetos[i].nome);
                     cartao.append(espaco);
-                   /* cartao.append("\n Orientador: ");
-                    cartao.append(jx.projetos[i].orientador); */
-                    cartao.append("Endereço: ");
-                    cartao.append(endereco);
-                    cartao.append(jx.projetos[i].link);
+                    cartao.appendChild(endereco);
+                    cartao.append(jx.projetos[i].perfil);
+                    cartao.href = jx.projetos[i].link;
+                    linha.append(cartao);
                 }
             }
-
         }
+
     </script>
 </head>
 
