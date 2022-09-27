@@ -4,7 +4,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
   $idperfil = $_GET["id"];
 
   $sql =<<<EOF
-     select projeto.* from public.projeto join perfil_projeto on (projeto_idprojeto = idprojeto) join perfil on (perfil_idperfil = idperfil and idperfil = $idperfil);
+  select projeto.*, endereco from public.link
+  join public.projeto on (link.projeto_idprojeto = idprojeto )
+  join perfil_projeto on (perfil_projeto.projeto_idprojeto = idprojeto)
+  join perfil on (perfil_idperfil = idperfil and idperfil = $idperfil));
 EOF;
   $ret = pg_query($db, $sql);
   if(!$ret) {
@@ -18,7 +21,7 @@ EOF;
       $projeto["descricao"] = $row[1];
       $projeto["orientador"] = $row[2];
       $projeto["idprojeto"] = $row[3];
-
+      $projeto["link"] = $row[4];
       array_push($response["projetos"], $projeto);
     }
     echo json_encode($response);
