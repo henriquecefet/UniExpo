@@ -3,7 +3,7 @@ include("conexao.php");
 if ($_SERVER["REQUEST_METHOD"] == "GET"){
   $idcurso = $_GET["curso"];
   $sql =<<<EOF
-  select projeto.*, curso.nome, endereco from link
+  select projeto.*, curso.nome, endereco, perfil.nome from link
   join public.projeto on (projeto.idprojeto = link.projeto_idprojeto)
   join perfil_projeto on (perfil_projeto.projeto_idprojeto = projeto.idprojeto)
   join perfil on (perfil_projeto.perfil_idperfil =  perfil.idperfil)
@@ -23,6 +23,7 @@ EOF;
       $projeto["idprojeto"] = $row[3];
       $projeto["curso"] = $row[4];
       $projeto["link"] = $row[5];
+      $projeto["perfil"] = $row[6];
       array_push($response["projetos"], $projeto);
     }
     echo json_encode($response);
