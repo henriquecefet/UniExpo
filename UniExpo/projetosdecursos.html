@@ -30,7 +30,6 @@
 
                 if (idCurso === "1"){
                     document.getElementById("mudavel").innerHTML="Matemática";
-
                     //Matemática
                 } else if (idCurso == "2"){
                     document.getElementById("mudavel").innerHTML="Sistemas de Informação";
@@ -47,17 +46,23 @@
         var criaCartoes = function(jx){
             const linha = document.querySelector('#projetos');
             const quantidade = jx.projetos.length;
-            for (let i = 0; i < quantidade; i++) {
-                const cartao = document.createElement('div');
-                const espaco = document.createElement('br');
-                cartao.classList.add('cartao');
-                linha.append(cartao);
-                console.log(jx.projetos[i].nome);
-                cartao.append(jx.projetos[i].nome);
-                cartao.append(espaco);
-                cartao.append("\n Orientador: ");
-                cartao.append(jx.projetos[i].orientador);
+            if (quantidade < 50){
+                for (let i = 0; i < quantidade; i++) {
+                    const cartao = document.createElement('div');
+                    const espaco = document.createElement('br');
+                    const link = document.createElement('p');
+                    link.onclick(location.href = jx.projetos[i].link);
+                    cartao.classList.add('cartao');
+                    linha.append(cartao);
+                    console.log(jx.projetos[i].nome);
+                    cartao.append(jx.projetos[i].nome);
+                    cartao.append(espaco);
+                    cartao.append("\n Orientador: ");
+                    cartao.append(jx.projetos[i].orientador);
+                    cartao.append(link);
+                }
             }
+
         }
     </script>
 </head>
