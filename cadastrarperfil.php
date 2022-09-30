@@ -1,7 +1,7 @@
 <?php
 include("conexao.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-  $nome= $_REQUEST["nome"];
+  $nome = $_REQUEST["nome"];
   $email = $_REQUEST["email"];
   $curso = $_REQUEST["curso"];
   $hashsenha = md5($_REQUEST["senha"]);
