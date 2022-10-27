@@ -26,7 +26,7 @@ EOF;
       $projeto["perfil"] = $row[6];
       array_push($response["projetos"], $projeto);
     }
-    //echo json_encode($response);
+    echo json_encode($response);
   }
 }
 
